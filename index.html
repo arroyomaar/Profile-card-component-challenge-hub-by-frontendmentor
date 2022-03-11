@@ -20,20 +20,20 @@
     </div>
     <div class="personal_data">
       <span class="name">Victor Crest</span>
-      <span class="age">26</span>
+      <span class="age"></span>
       <div class="city">London</div>
     </div>
     <div class="stadistics">
       <div class="stadis">
-        <div class="quarentity">80K</div>
+        <div class="quarentity flo">80K</div>
         <div class="units">Followers</div>
       </div>
       <div class="stadis">
-        <div class="quarentity">803K</div>
+        <div class="quarentity lik" >803K</div>
         <div class="units">Likes</div>
       </div>
       <div class="stadis">
-        <div class="quarentity">1.4K</div>
+        <div class="quarentity pho">1.4K</div>
         <div class="units">Photos</div>
       </div>
     </div>
@@ -44,5 +44,57 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
   -->
+  <script>
+    const age = document.querySelector('.age');
+    let cantidad=0;
+    function tiempo(number,limite,suma){
+      cantidad+=suma;
+      number.textContent=cantidad;
+      if(cantidad===limite){
+        clearInterval(times);
+        cantidad=0;
+      }
+    }
+    let times=setInterval(tiempo,80,age,26,2);
+  </script>
+  <script>
+    const followers = document.querySelector('.flo');
+    let cantidada=0;
+    function tiempoa(number,limite,suma){
+      cantidada+=suma;
+      number.textContent=`${cantidada}K`;
+      if(cantidada===limite){
+        clearInterval(timesa);
+        cantidada=0;
+      }
+    }
+    let timesa=setInterval(tiempoa,80,followers,80,10);
+  </script>
+  <script>
+    const likes = document.querySelector('.lik');
+    let cantidade=0;
+    function tiempoe(number,limite,suma){
+      cantidade+=Math.floor(suma);
+      number.textContent=`${cantidade}k`;
+      if(cantidade>=limite){
+        clearInterval(timese);
+        cantidade=0;
+      }
+    }
+    let timese=setInterval(tiempoe,80,likes,803,11);
+  </script>
+  <script>
+    const photos = document.querySelector('.pho');
+    let cantidadi=0;
+    function tiempoi(number,limite,suma){
+      cantidadi+=suma;
+      number.textContent=`${cantidadi}K`;
+      if(cantidadi===limite){
+        clearInterval(timesi);
+        cantidadi=0;
+      }
+    }
+    let timesi=setInterval(tiempoi,80,photos,1.4,0.2);
+  </script>
 </body>
 </html>
